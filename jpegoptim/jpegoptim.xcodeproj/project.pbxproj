@@ -42,8 +42,8 @@
 		5A1663991B529A8B00DF7D3C /* misc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = misc.c; path = src/misc.c; sourceTree = "<group>"; };
 		5A27BA31139B09080095FC2F /* release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = release.xcconfig; path = ../imageoptim/release.xcconfig; sourceTree = SOURCE_ROOT; };
 		5A27BA32139B09080095FC2F /* debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = ../imageoptim/debug.xcconfig; sourceTree = SOURCE_ROOT; };
-		5A401AF1111A75A500908C9B /* jpeg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = jpeg.xcodeproj; path = ../libjpeg/jpeg.xcodeproj; sourceTree = "<group>"; };
-		5A81674F0EA11E3F00962CF2 /* jconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jconfig.h; path = ../libjpeg/jconfig.h; sourceTree = SOURCE_ROOT; };
+		5A401AF1111A75A500908C9B /* jpeg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = jpeg.xcodeproj; path = ../mozjpeg/jpeg.xcodeproj; sourceTree = "<group>"; };
+		5A81674F0EA11E3F00962CF2 /* jconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jconfig.h; path = ../mozjpeg/jconfig.h; sourceTree = SOURCE_ROOT; };
 		5A8167840EA11E3F00962CF2 /* src/jpegoptim.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = src/jpegoptim.c; sourceTree = SOURCE_ROOT; };
 		8DD76FB20486AB0100D96B5E /* jpegoptim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jpegoptim; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -215,6 +215,8 @@
 		1DEB928608733DD80010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
 				PRODUCT_NAME = jpegoptim;
 				SKIP_INSTALL = YES;
 			};
@@ -223,6 +225,8 @@
 		1DEB928708733DD80010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
 				PRODUCT_NAME = jpegoptim;
 				SKIP_INSTALL = YES;
 			};
@@ -247,8 +251,8 @@
 				GCC_WARN_SIGN_COMPARE = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../libjpeg/",
-					"$(SRCROOT)/../libjpeg/src/",
+					"$(SRCROOT)/../mozjpeg/",
+					"$(SRCROOT)/../mozjpeg/src/",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 			};
@@ -275,8 +279,8 @@
 				GCC_WARN_SIGN_COMPARE = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../libjpeg/",
-					"$(SRCROOT)/../libjpeg/src/",
+					"$(SRCROOT)/../mozjpeg/",
+					"$(SRCROOT)/../mozjpeg/src/",
 				);
 			};
 			name = Release;
@@ -284,12 +288,14 @@
 		5AB1154D1B52B1C900A3C73A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 			};
 			name = Debug;
 		};
 		5AB1154E1B52B1C900A3C73A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 			};
 			name = Release;
 		};

@@ -1,0 +1,524 @@
+diff --git a/Sparkle.xcodeproj/project.pbxproj b/Sparkle.xcodeproj/project.pbxproj
+index e785976d..86ca48c3 100644
+--- a/Sparkle.xcodeproj/project.pbxproj
++++ b/Sparkle.xcodeproj/project.pbxproj
+@@ -4087,24 +4087,28 @@
+ 		14732BC71960F69300593899 /* Debug */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+ 		14732BC81960F69300593899 /* Release */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+ 		14950061195FB89500BC5B5B /* Debug */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+ 		14950062195FB89500BC5B5B /* Release */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4112,6 +4116,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 149B78631B7D3A0C00D7D62C /* ConfigCommonCoverage.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4119,6 +4124,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = FA1941CA0D94A70100DD942E /* ConfigFrameworkDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4126,6 +4132,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 72F94EDA1CC36C37002DEE68 /* ConfigTestAppDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4133,6 +4140,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 149B78641B7D3A4800D7D62C /* ConfigUnitTestCoverage.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4140,18 +4148,21 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286722B664FD004AA304 /* CommandLineTool-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+ 		149B78601B7D398100D7D62C /* Coverage */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+ 		149B78621B7D398100D7D62C /* Coverage */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4159,6 +4170,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = FA1941CA0D94A70100DD942E /* ConfigFrameworkDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4166,6 +4178,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 72A40F082956120D007C7DD5 /* ConfigFrameworkRelease.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4173,6 +4186,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = FA1941CF0D94A70100DD942E /* ConfigCommonDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4180,6 +4194,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = FA1941CC0D94A70100DD942E /* ConfigCommonRelease.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4187,6 +4202,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286822B664FD004AA304 /* CommandLineTool-Debug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4194,6 +4210,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286722B664FD004AA304 /* CommandLineTool-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4201,6 +4218,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 7205C46C1E13244800E370AE /* ConfigUnitTestDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4208,6 +4226,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 7205C46D1E13245600E370AE /* ConfigUnitTestRelease.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4215,6 +4234,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 72F94EDA1CC36C37002DEE68 /* ConfigTestAppDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4222,6 +4242,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = FA1941CD0D94A70100DD942E /* ConfigTestApp.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4229,6 +4250,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286822B664FD004AA304 /* CommandLineTool-Debug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4236,6 +4258,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286722B664FD004AA304 /* CommandLineTool-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4243,6 +4266,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286722B664FD004AA304 /* CommandLineTool-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4250,6 +4274,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 721C24571CB754E8005440CB /* ConfigInstallerProgress.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4257,6 +4282,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 721C24571CB754E8005440CB /* ConfigInstallerProgress.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4264,6 +4290,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 721C24571CB754E8005440CB /* ConfigInstallerProgress.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4271,6 +4298,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 724BB37F1D31D1EA005D534A /* ConfigInstallerConnectionDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4278,6 +4306,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 724BB37E1D31D1EA005D534A /* ConfigInstallerConnection.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4285,6 +4314,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 724BB37E1D31D1EA005D534A /* ConfigInstallerConnection.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4292,6 +4322,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 724BB3A51D3338C8005D534A /* ConfigInstallerStatusDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4299,6 +4330,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 724BB3A41D3338C8005D534A /* ConfigInstallerStatus.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4306,6 +4338,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 724BB3A41D3338C8005D534A /* ConfigInstallerStatus.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4313,6 +4346,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 7205C46E1E13254500E370AE /* ConfigUITestDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4320,6 +4354,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 729F10FE1C65A9B500DFCCC5 /* ConfigUITestCoverage.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4327,6 +4362,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 7205C46F1E13255900E370AE /* ConfigUITestRelease.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4334,6 +4370,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 72F94ED51CC3441A002DEE68 /* ConfigInstallerLauncherDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4341,6 +4378,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 72F94ED51CC3441A002DEE68 /* ConfigInstallerLauncherDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4348,6 +4386,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 726E07C11CAF1E79001A286B /* ConfigInstallerLauncher.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4356,6 +4395,7 @@
+ 			baseConfigurationReference = 72F94ED61CC344A7002DEE68 /* ConfigDownloaderDebug.xcconfig */;
+ 			buildSettings = {
+ 				CLANG_ANALYZER_NONNULL = YES;
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4364,6 +4404,7 @@
+ 			baseConfigurationReference = 72F94ED61CC344A7002DEE68 /* ConfigDownloaderDebug.xcconfig */;
+ 			buildSettings = {
+ 				CLANG_ANALYZER_NONNULL = YES;
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4372,6 +4413,7 @@
+ 			baseConfigurationReference = 728638EE1CAF589C00783084 /* ConfigDownloader.xcconfig */;
+ 			buildSettings = {
+ 				CLANG_ANALYZER_NONNULL = YES;
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4379,6 +4421,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 72F94EDB1CC36C6F002DEE68 /* ConfigTestAppHelperDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4386,6 +4429,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 72F94EDB1CC36C6F002DEE68 /* ConfigTestAppHelperDebug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4393,6 +4437,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = 726E4A281C86CAB500C57C6A /* ConfigTestAppHelper.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4400,6 +4445,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = FA1941CE0D94A70100DD942E /* ConfigRelaunch.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4407,6 +4453,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = FA1941CE0D94A70100DD942E /* ConfigRelaunch.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4414,6 +4461,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = FA1941CE0D94A70100DD942E /* ConfigRelaunch.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4422,6 +4470,7 @@
+ 			baseConfigurationReference = 72D954B01CBB41E2006F28BD /* ConfigSparkleTool.xcconfig */;
+ 			buildSettings = {
+ 				CLANG_ANALYZER_NONNULL = YES;
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4430,6 +4479,7 @@
+ 			baseConfigurationReference = 72D954B01CBB41E2006F28BD /* ConfigSparkleTool.xcconfig */;
+ 			buildSettings = {
+ 				CLANG_ANALYZER_NONNULL = YES;
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4438,24 +4488,28 @@
+ 			baseConfigurationReference = 72D954B01CBB41E2006F28BD /* ConfigSparkleTool.xcconfig */;
+ 			buildSettings = {
+ 				CLANG_ANALYZER_NONNULL = YES;
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+ 		895C5DC124D78E210058A82D /* Debug */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+ 		895C5DC224D78E210058A82D /* Coverage */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+ 		895C5DC324D78E210058A82D /* Release */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4463,6 +4517,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E281422B64548004AA304 /* bsdiff-Debug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4470,6 +4525,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E281522B64549004AA304 /* bsdiff-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4477,6 +4533,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E281522B64549004AA304 /* bsdiff-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4484,6 +4541,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E285822B6622E004AA304 /* ed25519-Debug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4491,6 +4549,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E285722B6622E004AA304 /* ed25519-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4498,6 +4557,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E285722B6622E004AA304 /* ed25519-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4505,6 +4565,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286822B664FD004AA304 /* CommandLineTool-Debug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4512,6 +4573,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286722B664FD004AA304 /* CommandLineTool-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4519,6 +4581,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286722B664FD004AA304 /* CommandLineTool-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -4526,6 +4589,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286822B664FD004AA304 /* CommandLineTool-Debug.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -4533,6 +4597,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286722B664FD004AA304 /* CommandLineTool-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Coverage;
+ 		};
+@@ -4540,6 +4605,7 @@
+ 			isa = XCBuildConfiguration;
+ 			baseConfigurationReference = EA1E286722B664FD004AA304 /* CommandLineTool-Release.xcconfig */;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 26.6;
+ 			};
+ 			name = Release;
+ 		};

@@ -18,6 +18,8 @@
 		5A4554541025E76F00A69944 /* clp.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A4554531025E76F00A69944 /* clp.c */; };
 		5A4554AC1025E97100A69944 /* xform.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A4553DE1025E50700A69944 /* xform.c */; };
 		5AD92F841B45F54600FE17B0 /* quantize.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AD92F831B45F54600FE17B0 /* quantize.c */; };
+		E12345613068BB7B0045C90A /* kcolor.c in Sources */ = {isa = PBXBuildFile; fileRef = E12345623068BB7B0045C90A /* kcolor.c */; };
+		E12345633068BB7B0045C90A /* gifunopt.c in Sources */ = {isa = PBXBuildFile; fileRef = E12345643068BB7B0045C90A /* gifunopt.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,17 +35,19 @@
 /* Begin PBXFileReference section */
 		5A27B9D0139B07DA0095FC2F /* release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = release.xcconfig; path = ../imageoptim/release.xcconfig; sourceTree = SOURCE_ROOT; };
 		5A27B9D3139B07EA0095FC2F /* debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = ../imageoptim/debug.xcconfig; sourceTree = SOURCE_ROOT; };
-		5A4553D01025E50700A69944 /* gifread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gifread.c; path = gifsicle/src/gifread.c; sourceTree = "<group>"; };
-		5A4553D21025E50700A69944 /* giffunc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = giffunc.c; path = gifsicle/src/giffunc.c; sourceTree = "<group>"; };
-		5A4553D61025E50700A69944 /* fmalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fmalloc.c; path = gifsicle/src/fmalloc.c; sourceTree = "<group>"; };
-		5A4553D91025E50700A69944 /* support.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = support.c; path = gifsicle/src/support.c; sourceTree = "<group>"; };
-		5A4553DA1025E50700A69944 /* merge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = merge.c; path = gifsicle/src/merge.c; sourceTree = "<group>"; };
-		5A4553DB1025E50700A69944 /* optimize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = optimize.c; path = gifsicle/src/optimize.c; sourceTree = "<group>"; };
-		5A4553DD1025E50700A69944 /* gifwrite.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.c; name = gifwrite.c; path = gifsicle/src/gifwrite.c; sourceTree = "<group>"; };
-		5A4553DE1025E50700A69944 /* xform.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xform.c; path = gifsicle/src/xform.c; sourceTree = "<group>"; };
-		5A4553DF1025E50700A69944 /* gifsicle.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.c; name = gifsicle.c; path = gifsicle/src/gifsicle.c; sourceTree = "<group>"; };
-		5A4554531025E76F00A69944 /* clp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = clp.c; path = gifsicle/src/clp.c; sourceTree = "<group>"; };
-		5AD92F831B45F54600FE17B0 /* quantize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = quantize.c; path = gifsicle/src/quantize.c; sourceTree = "<group>"; };
+		5A4553D01025E50700A69944 /* gifread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gifread.c; path = src/src/gifread.c; sourceTree = "<group>"; };
+		5A4553D21025E50700A69944 /* giffunc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = giffunc.c; path = src/src/giffunc.c; sourceTree = "<group>"; };
+		5A4553D61025E50700A69944 /* fmalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fmalloc.c; path = src/src/fmalloc.c; sourceTree = "<group>"; };
+		5A4553D91025E50700A69944 /* support.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = support.c; path = src/src/support.c; sourceTree = "<group>"; };
+		5A4553DA1025E50700A69944 /* merge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = merge.c; path = src/src/merge.c; sourceTree = "<group>"; };
+		5A4553DB1025E50700A69944 /* optimize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = optimize.c; path = src/src/optimize.c; sourceTree = "<group>"; };
+		5A4553DD1025E50700A69944 /* gifwrite.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.c; name = gifwrite.c; path = src/src/gifwrite.c; sourceTree = "<group>"; };
+		5A4553DE1025E50700A69944 /* xform.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xform.c; path = src/src/xform.c; sourceTree = "<group>"; };
+		5A4553DF1025E50700A69944 /* gifsicle.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.c; name = gifsicle.c; path = src/src/gifsicle.c; sourceTree = "<group>"; };
+		5A4554531025E76F00A69944 /* clp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = clp.c; path = src/src/clp.c; sourceTree = "<group>"; };
+		5AD92F831B45F54600FE17B0 /* quantize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = quantize.c; path = src/src/quantize.c; sourceTree = "<group>"; };
+		E12345623068BB7B0045C90A /* kcolor.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = kcolor.c; path = src/src/kcolor.c; sourceTree = "<group>"; };
+		E12345643068BB7B0045C90A /* gifunopt.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = gifunopt.c; path = src/src/gifunopt.c; sourceTree = "<group>"; };
 		8DD76FB20486AB0100D96B5E /* gifsicle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = gifsicle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -73,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				5AD92F831B45F54600FE17B0 /* quantize.c */,
+				E12345623068BB7B0045C90A /* kcolor.c */,
+				E12345643068BB7B0045C90A /* gifunopt.c */,
 				5A4554531025E76F00A69944 /* clp.c */,
 				5A4553D61025E50700A69944 /* fmalloc.c */,
 				5A4553D21025E50700A69944 /* giffunc.c */,
@@ -171,6 +177,8 @@
 				5A4553E81025E50700A69944 /* fmalloc.c in Sources */,
 				5A4553E41025E50700A69944 /* giffunc.c in Sources */,
 				5AD92F841B45F54600FE17B0 /* quantize.c in Sources */,
+				E12345613068BB7B0045C90A /* kcolor.c in Sources */,
+				E12345633068BB7B0045C90A /* gifunopt.c in Sources */,
 				5A4553E21025E50700A69944 /* gifread.c in Sources */,
 				5A4553F11025E50700A69944 /* gifsicle.c in Sources */,
 				5A4553EF1025E50700A69944 /* gifwrite.c in Sources */,
@@ -218,7 +226,7 @@
 				GCC_THREADSAFE_STATICS = NO;
 				HEADER_SEARCH_PATHS = (
 					.,
-					gifsicle/include/,
+					src/include/,
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				SKIP_INSTALL = YES;
@@ -237,7 +245,7 @@
 				GCC_THREADSAFE_STATICS = NO;
 				HEADER_SEARCH_PATHS = (
 					.,
-					gifsicle/include/,
+					src/include/,
 				);
 				SKIP_INSTALL = YES;
 			};

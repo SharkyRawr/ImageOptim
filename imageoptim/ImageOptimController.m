@@ -180,8 +180,6 @@ static void appendFormatNameIfLossyEnabled(NSUserDefaults *defs, NSString *name,
                                                      [percFormatter stringFromNumber:@(maxOptimizedFraction)]];
                     selectable = YES;
                 }
-            } else if ([defs boolForKey:@"GuetzliEnabled"]) {
-                str = @"Warning: Guetzli tool enabled. Optimizations may take a very long time.";
             } else if ([defs boolForKey:@"LossyEnabled"]) {
                 NSMutableArray *arr = [NSMutableArray new];
                 appendFormatNameIfLossyEnabled(defs, @"JPEG", @"JpegOptimMaxQuality", arr);
@@ -357,20 +355,8 @@ static void appendFormatNameIfLossyEnabled(NSUserDefaults *defs, NSString *name,
     [prefsController showLossySettings:sender];
 }
 
-- (IBAction)openApiHomepage:(id)sender {
-    [self openURL:@"https://imageoptim.com/app-api"];
-}
-
-- (IBAction)openHomepage:(id)sender {
-    [self openURL:@"https://imageoptim.com"];
-}
-
 - (IBAction)viewSource:(id)sender {
-    [self openURL:@"https://imageoptim.com/source"];
-}
-
-- (IBAction)openDonationPage:(id)sender {
-    [self openURL:@"https://imageoptim.com/donate.html"];
+    [self openURL:@"https://github.com/SharkyRawr/ImageOptim"];
 }
 
 - (void)openURL:(NSString *)stringURL {

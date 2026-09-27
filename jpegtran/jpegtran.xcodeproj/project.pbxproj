@@ -34,7 +34,7 @@
 /* Begin PBXFileReference section */
 		5A27BA26139B08E10095FC2F /* release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = release.xcconfig; path = ../imageoptim/release.xcconfig; sourceTree = SOURCE_ROOT; };
 		5A27BA27139B08E10095FC2F /* debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = ../imageoptim/debug.xcconfig; sourceTree = SOURCE_ROOT; };
-		5A739BA30EA4034800D751E1 /* jpeg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = jpeg.xcodeproj; path = ../libjpeg/jpeg.xcodeproj; sourceTree = "<group>"; };
+		5A739BA30EA4034800D751E1 /* jpeg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = jpeg.xcodeproj; path = ../mozjpeg/jpeg.xcodeproj; sourceTree = "<group>"; };
 		5A739BAE0EA4038A00D751E1 /* src/jpegtran.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = src/jpegtran.c; sourceTree = "<group>"; };
 		5A739BB70EA4042600D751E1 /* src/transupp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = src/transupp.c; sourceTree = "<group>"; };
 		5A739C130EA406A000D751E1 /* src/cdjpeg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = src/cdjpeg.c; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 				5A739BB70EA4042600D751E1 /* src/transupp.c */,
 			);
 			name = libimageoptimjpeg;
-			path = ../libjpeg;
+			path = ../mozjpeg;
 			sourceTree = SOURCE_ROOT;
 		};
 		1AB674ADFE9D54B511CA2CBB /* Products */ = {
@@ -182,11 +182,13 @@
 		1DEB928608733DD80010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				GCC_DYNAMIC_NO_PIC = NO;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
 				PRODUCT_NAME = jpegtran;
 				SKIP_INSTALL = YES;
 			};
@@ -195,10 +197,12 @@
 		1DEB928708733DD80010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
 				PRODUCT_NAME = jpegtran;
 				SKIP_INSTALL = YES;
 			};
@@ -210,7 +214,7 @@
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libjpeg/";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../mozjpeg/";
 			};
 			name = Debug;
 		};
@@ -218,7 +222,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A27BA26139B08E10095FC2F /* release.xcconfig */;
 			buildSettings = {
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libjpeg/";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../mozjpeg/";
 			};
 			name = Release;
 		};

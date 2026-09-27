@@ -333,12 +333,6 @@
                                     <action selector="makeKeyAndOrderFront:" target="526" id="531"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Check for Updates…" id="624">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="checkForUpdates:" target="623" id="625"/>
-                                </connections>
-                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="362">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
@@ -349,12 +343,6 @@
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="364">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                            </menuItem>
-                            <menuItem title="Web API…" id="eaB-hR-QWi">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="openApiHomepage:" target="-1" id="Tzm-Ws-jMO"/>
-                                </connections>
                             </menuItem>
                             <menuItem title="Services" id="131">
                                 <menu key="submenu" title="Services" systemMenu="services" id="130"/>
@@ -535,12 +523,6 @@ CA
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="IxE-F3-7sg"/>
-                            <menuItem title="Zopfli" id="658">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <binding destination="562" name="value" keyPath="values.ZopfliEnabled" id="815"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="PNGOUT" id="813">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -676,20 +658,8 @@ CA
                                     <action selector="showHelp:" target="-1" id="507"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="ImageOptim Website" id="733">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="openHomepage:" target="-1" id="737"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Donate" id="820">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="openDonationPage:" target="-1" id="822"/>
-                                </connections>
-                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="738"/>
-                            <menuItem title="View Source" id="735">
+                            <menuItem title="View Fork on GitHub" id="735">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="viewSource:" target="-1" id="736"/>
@@ -801,7 +771,6 @@ CA
             </view>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="562"/>
-        <customObject id="623" customClass="SUUpdater"/>
         <menu id="aEm-KO-6Fg">
             <items>
                 <menuItem title="Show in Finder" id="ddH-3k-EuT">

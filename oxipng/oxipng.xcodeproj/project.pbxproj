@@ -155,6 +155,8 @@
 			buildSettings = {
 				CARGO_XCODE_CARGO_DEP_FILE_NAME = oxipng.d;
 				CARGO_XCODE_CARGO_FILE_NAME = oxipng;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
 				PRODUCT_NAME = oxipng;
 				SUPPORTED_PLATFORMS = macosx;
 			};
@@ -165,6 +167,8 @@
 			buildSettings = {
 				CARGO_XCODE_CARGO_DEP_FILE_NAME = oxipng.d;
 				CARGO_XCODE_CARGO_FILE_NAME = oxipng;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
 				PRODUCT_NAME = oxipng;
 				SUPPORTED_PLATFORMS = macosx;
 			};

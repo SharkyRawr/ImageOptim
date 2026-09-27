@@ -181,15 +181,9 @@
 	<key>OSAScriptingDefinition</key>
 	<string>ImageOptimVerbs.sdef</string>
 	<key>SUAllowsAutomaticUpdates</key>
-	<true/>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
-	<true/>
-	<key>SUFeedURL</key>
-	<string>https://imageoptim.com/appcast.xml</string>
-	<key>SUPublicDSAKeyFile</key>
-	<string>dsa_pub.pem</string>
-	<key>SUPublicEDKey</key>
-	<string>ZNVqPxFrHqiC9pV00O29sA9VjyX17bhob1nF8zJafxM=</string>
+	<false/>
 	<key>SUShowReleaseNotes</key>
 	<true/>
 </dict>

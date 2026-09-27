@@ -31,9 +31,7 @@ extern NSDictionary *statusImages;
 - (IBAction)clearComplete:(id)sender;
 
 - (IBAction)quickLookAction:(id)sender;
-- (IBAction)openHomepage:(id)sender;
 - (IBAction)viewSource:(id)sender;
-- (IBAction)openDonationPage:(id)sender;
 - (IBAction)browseForFiles:(id)sender;
 
 @property (readonly) int numberOfCPUs;

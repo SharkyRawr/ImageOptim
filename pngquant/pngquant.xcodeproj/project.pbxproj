@@ -1,6 +1,5 @@
 // !$*UTF8*$!
 {
-	/* generated with cargo-xcode 1.8.0 */
 	archiveVersion = 1;
 	classes = {
 	};
@@ -8,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA00FD3D7ED13B3B3D19E325 /* Cargo.toml in Sources */ = {isa = PBXBuildFile; fileRef = CAF971CC4B513EF4668187A5 /* Cargo.toml */; settings = {COMPILER_FLAGS = "--bin 'pngquant'"; }; };
-
+		CA00FD3D7ED13B3B3D19E325 /* src/Cargo.toml in Sources */ = {isa = PBXBuildFile; fileRef = CAF971CC4B513EF4668187A5 /* src/Cargo.toml */; settings = {COMPILER_FLAGS = "--bin 'pngquant'"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -33,7 +31,6 @@
 /* Begin PBXFileReference section */
 		CA008FFA42538780035A8A54 /* pngquant */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pngquant; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF971CC4B513EF4668187A5 /* src/Cargo.toml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = src/Cargo.toml; sourceTree = "<group>"; };
-
 		CAFD6179D382ACC9FD72F282 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text; name = debug.xcconfig; path = ../imageoptim/debug.xcconfig; sourceTree = "<group>"; };
 		CAFE6179D382ABC47E405028 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text; name = release.xcconfig; path = ../imageoptim/release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,7 +39,7 @@
 		CAF071CC4B51D65BC3C892A8 = {
 			isa = PBXGroup;
 			children = (
-				CAF971CC4B513EF4668187A5 /* Cargo.toml */,
+				CAF971CC4B513EF4668187A5 /* src/Cargo.toml */,
 				CAF171CC4B5122869D176AE5 /* Products */,
 				CAF271CC4B5198AF0B5890DB /* Frameworks */,
 				CAFD6179D382ACC9FD72F282 /* debug.xcconfig */,
@@ -146,11 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA00FD3D7ED13B3B3D19E325 /* Cargo.toml in Sources */,
+				CA00FD3D7ED13B3B3D19E325 /* src/Cargo.toml in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -159,10 +155,10 @@
 			buildSettings = {
 				CARGO_XCODE_CARGO_DEP_FILE_NAME = pngquant.d;
 				CARGO_XCODE_CARGO_FILE_NAME = pngquant;
-				
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
 				PRODUCT_NAME = pngquant;
 				SUPPORTED_PLATFORMS = macosx;
-				
 			};
 			name = Release;
 		};
@@ -171,14 +167,13 @@
 			buildSettings = {
 				CARGO_XCODE_CARGO_DEP_FILE_NAME = pngquant.d;
 				CARGO_XCODE_CARGO_FILE_NAME = pngquant;
-				
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
 				PRODUCT_NAME = pngquant;
 				SUPPORTED_PLATFORMS = macosx;
-				
 			};
 			name = Debug;
 		};
-
 		CAF76179D3823CC16B37690B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CAFE6179D382ABC47E405028 /* release.xcconfig */;

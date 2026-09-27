@@ -1,29 +1,34 @@
 # ImageOptim
 
-[ImageOptim](https://imageoptim.com) is a GUI for lossless image optimization tools: Zopfli, PNGOUT, [OxiPNG](https://lib.rs/crates/oxipng), AdvPNG, PNGCrush, [JPEGOptim](https://github.com/tjko/jpegoptim), Jpegtran, [Guetzli](https://github.com/google/guetzli), [Gifsicle](https://kornel.ski/lossygif), [SVGO](https://github.com/svg/svgo), [svgcleaner](https://github.com/RazrFalcon/svgcleaner) and [MozJPEG](https://github.com/mozilla/mozjpeg).
+[ImageOptim](https://github.com/SharkyRawr/ImageOptim) is a GUI for image optimization tools: PNGOUT, [OxiPNG](https://lib.rs/crates/oxipng), AdvPNG, PNGCrush, [JPEGOptim](https://github.com/tjko/jpegoptim), Jpegtran, [Gifsicle](https://github.com/kohler/gifsicle), [SVGO](https://github.com/svg/svgo), [svgcleaner](https://github.com/RazrFalcon/svgcleaner) and [MozJPEG](https://github.com/mozilla/mozjpeg).
+
+This is a fork of [Kornel Lesiński's ImageOptim](https://imageoptim.com).
 
 ## Building
 
 Requires:
 
-* Xcode
+* Xcode (macOS 26.6 deployment target)
 * [Rust](https://rust-lang.org/) installed via [rustup](https://www.rustup.rs/) (not Homebrew).
+* Node.js and npm (for the bundled SVGO script).
 
 ```sh
-git clone --recursive https://imageoptim.com ImageOptim
+git clone --recursive https://github.com/SharkyRawr/ImageOptim.git ImageOptim
 cd ImageOptim
+make -C pngcrush
+make -C svgo
+xcodebuild -project imageoptim/ImageOptim.xcodeproj -scheme ImageOptim -configuration Debug CODE_SIGNING_ALLOWED=NO build
 ```
 
-To get started, open `imageoptim/ImageOptim.xcodeproj`. It will automatically download and build all subprojects when run in Xcode.
+The two `make` commands generate inputs that Xcode needs before it plans the build. Open `imageoptim/ImageOptim.xcodeproj` to build from Xcode after running them.
 
 In case of build errors, these sometimes help:
 
 ```sh
-git submodule update --init
+git submodule update --init --recursive
 ```
 
 ```sh
-cd gifsicle # or pngquant
-make clean
-make
+make -C pngcrush
+make -C svgo
 ```

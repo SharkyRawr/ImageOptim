@@ -2,7 +2,7 @@
 #import "SharedPrefs.h"
 
 NSUserDefaults *IOSharedPrefs(void) {
-    return [[NSUserDefaults alloc] initWithSuiteName:@"59KZTZA4XR.net.pornel.ImageOptim"];
+    return [[NSUserDefaults alloc] initWithSuiteName:@"Z4HFLD69D2.com.github.sharkyrawr.ImageOptim"];
 }
 
 static void copyToDefs(const NSArray *__nonnull keys, const NSUserDefaults *__nonnull defs, NSUserDefaults *__nonnull shared) {
@@ -23,7 +23,7 @@ void IOSharedPrefsCopy(NSUserDefaults *__nonnull defs) {
         @"JpegOptimEnabled", @"JpegTranEnabled", @"JpegTranStripAll",
         @"OptiPngEnabled",
         @"PngCrush2Enabled", @"PngOutEnabled",
-        @"PngOutRemoveChunks", @"ZopfliEnabled",
+        @"PngOutRemoveChunks",
         @"PngMinQuality", @"JpegOptimMaxQuality", @"GifQuality",
     ];
 
