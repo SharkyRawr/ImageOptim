@@ -60,6 +60,9 @@
 		5ABE157C1AE5073E00861C6B /* JpegoptimWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9E5B2A0CB961E000E05D28 /* JpegoptimWorker.m */; };
 		5ABE157D1AE5073E00861C6B /* JpegtranWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E04420EA40B6A00380DE7 /* JpegtranWorker.m */; };
 		5ABE157E1AE5073E00861C6B /* OxiPngWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C29420CB04A0F00FAF446 /* OxiPngWorker.m */; };
+		6D0000012A00000100000003 /* WebpWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0000012A00000100000002 /* WebpWorker.m */; };
+		6D0000012A00000200000003 /* cwebp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D0000012A00000200000002 /* cwebp */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6D0000012A00000200000005 /* libwebp-COPYING in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D0000012A00000200000004 /* libwebp-COPYING */; };
 		5ABE157F1AE5073E00861C6B /* PngCrushWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A44F4B30CB1868100BD2884 /* PngCrushWorker.m */; };
 		5ABE15801AE5073E00861C6B /* PngoutWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE54DEE0CAEF56100903DF4 /* PngoutWorker.m */; };
 		5ABE15811AE5073E00861C6B /* Save.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB81F941AE1BE1300719AB7 /* Save.m */; };
@@ -81,6 +84,7 @@
 		5AC4CBB31AF3FFA10003AEA2 /* ImageOptimGPL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABE15421AE5072300861C6B /* ImageOptimGPL.framework */; };
 		5AC4CC801AF568E90003AEA2 /* SavingsFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A18131416D1D700D62DB7 /* SavingsFormatter.m */; };
 		5AC64EC21AF3FCFE0032AA7F /* unoptimized.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC64EC11AF3FCFE0032AA7F /* unoptimized.png */; };
+		6D0000012A00000100000006 /* unoptimized.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6D0000012A00000100000005 /* unoptimized.webp */; };
 		5AC64F071AF3FDEE0032AA7F /* ExtensionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC64F061AF3FDEE0032AA7F /* ExtensionController.m */; };
 		5AC64F091AF3FDEE0032AA7F /* ExtensionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC64F081AF3FDEE0032AA7F /* ExtensionController.xib */; };
 		5AC64F0C1AF3FDEE0032AA7F /* ImageOptimize.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5AC64EFE1AF3FDEE0032AA7F /* ImageOptimize.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -444,11 +448,13 @@
 			dstSubfolderSpec = 7;
 			files = (
 				5ABE16271AE5097800861C6B /* advpng in CopyFiles */,
+				6D0000012A00000200000003 /* cwebp in CopyFiles */,
 				5ABE16261AE5096D00861C6B /* gifsicle in CopyFiles */,
 				5ABE16241AE5096300861C6B /* jpegoptim in CopyFiles */,
 				5ABE16231AE5095B00861C6B /* jpegtran in CopyFiles */,
 				5ABE16251AE5096800861C6B /* libimageoptimjpeg.dylib in CopyFiles */,
 				5ABE16291AE5099500861C6B /* liblibpng.dylib in CopyFiles */,
+				6D0000012A00000200000005 /* libwebp-COPYING in CopyFiles */,
 				5FFC96C1275842310035D0A2 /* oxipng in CopyFiles */,
 				5ABE161F1AE5094600861C6B /* pngcrush in CopyFiles */,
 				5ABE15841AE5074900861C6B /* pngout in CopyFiles */,
@@ -565,6 +571,10 @@
 		5A5811931AD73A630001838D /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = ../Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		5A5C29410CB04A0F00FAF446 /* OxiPngWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OxiPngWorker.h; sourceTree = "<group>"; };
 		5A5C29420CB04A0F00FAF446 /* OxiPngWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OxiPngWorker.m; sourceTree = "<group>"; };
+		6D0000012A00000100000001 /* WebpWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebpWorker.h; sourceTree = "<group>"; };
+		6D0000012A00000100000002 /* WebpWorker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebpWorker.m; sourceTree = "<group>"; };
+		6D0000012A00000200000002 /* cwebp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = cwebp; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D0000012A00000200000004 /* libwebp-COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = "libwebp-COPYING"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5CD39319662E940096D77F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
 		5A5CD39519662E9A0096D77F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5A5E8ABF1B6508D9003012E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "zh-Hans"; path = "zh-Hans.lproj/Help"; sourceTree = "<group>"; };
@@ -683,6 +693,7 @@
 		5ABF611613E37BC3009F6F22 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5AC4CC101AF445480003AEA2 /* ImageOptim.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ImageOptim.entitlements; sourceTree = "<group>"; };
 		5AC64EC11AF3FCFE0032AA7F /* unoptimized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unoptimized.png; sourceTree = "<group>"; };
+		6D0000012A00000100000005 /* unoptimized.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = unoptimized.webp; sourceTree = "<group>"; };
 		5AC64EFE1AF3FDEE0032AA7F /* ImageOptimize.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ImageOptimize.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC64F011AF3FDEE0032AA7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AC64F041AF3FDEE0032AA7F /* ImageOptimize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ImageOptimize.entitlements; sourceTree = "<group>"; };
@@ -815,6 +826,8 @@
 				8D1107320486CEB800E47090 /* ImageOptim.app */,
 				5A44976911303B01006EAA56 /* ImageOptim.tar.bz2 */,
 				5ABE15421AE5072300861C6B /* ImageOptimGPL.framework */,
+				6D0000012A00000200000002 /* cwebp */,
+				6D0000012A00000200000004 /* libwebp-COPYING */,
 				5AC64EFE1AF3FDEE0032AA7F /* ImageOptimize.appex */,
 			);
 			name = Products;
@@ -1058,6 +1071,7 @@
 			children = (
 				5ABE15541AE5072300861C6B /* Info.plist */,
 				5AC64EC11AF3FCFE0032AA7F /* unoptimized.png */,
+				6D0000012A00000100000005 /* unoptimized.webp */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1098,6 +1112,8 @@
 				5A6E04420EA40B6A00380DE7 /* JpegtranWorker.m */,
 				5A5C29410CB04A0F00FAF446 /* OxiPngWorker.h */,
 				5A5C29420CB04A0F00FAF446 /* OxiPngWorker.m */,
+				6D0000012A00000100000001 /* WebpWorker.h */,
+				6D0000012A00000100000002 /* WebpWorker.m */,
 				5A44F4B20CB1868100BD2884 /* PngCrushWorker.h */,
 				5A44F4B30CB1868100BD2884 /* PngCrushWorker.m */,
 				5AE54DED0CAEF56100903DF4 /* PngoutWorker.h */,
@@ -1181,6 +1197,7 @@
 				5ABE153D1AE5072300861C6B /* Sources */,
 				5ABE153E1AE5072300861C6B /* Frameworks */,
 				5ABE153F1AE5072300861C6B /* Headers */,
+				6D0000012A00000200000001 /* Build cwebp */,
 				5A5C88511B4E7DCA00BF10B0 /* CopyFiles */,
 			);
 			buildRules = (
@@ -1631,6 +1648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AC64EC21AF3FCFE0032AA7F /* unoptimized.png in Resources */,
+				6D0000012A00000100000006 /* unoptimized.webp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1644,6 +1662,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D0000012A00000200000001 /* Build cwebp */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build cwebp";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/cwebp",
+				"$(BUILT_PRODUCTS_DIR)/libwebp-COPYING",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"${SRCROOT}/../webp/build-cwebp.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5ABE153D1AE5072300861C6B /* Sources */ = {
@@ -1661,6 +1699,7 @@
 				5ABE157D1AE5073E00861C6B /* JpegtranWorker.m in Sources */,
 				5ABE16D21AE5AD9F00861C6B /* log.c in Sources */,
 				5ABE157E1AE5073E00861C6B /* OxiPngWorker.m in Sources */,
+				6D0000012A00000100000003 /* WebpWorker.m in Sources */,
 				5ABE157F1AE5073E00861C6B /* PngCrushWorker.m in Sources */,
 				5ABE15801AE5073E00861C6B /* PngoutWorker.m in Sources */,
 				5AE04E2E1B5301E100669E85 /* PngquantWorker.m in Sources */,

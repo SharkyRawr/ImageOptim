@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 #import "Job.h"
 #import "JobQueue.h"
+#import "File.h"
 
 @interface BackendTests : XCTestCase
 
@@ -67,6 +68,27 @@
 
     XCTAssertEqual([[f byteSizeOptimized] integerValue], [size integerValue]);
     XCTAssertEqual([[f byteSizeOriginal] integerValue], [origSize integerValue]);
+}
+
+- (void)testCompressWebP {
+    NSURL *original = [[NSBundle bundleForClass:[self class]] URLForResource:@"unoptimized" withExtension:@"webp"];
+    NSURL *path = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.webp", [NSUUID UUID].UUIDString]]];
+    XCTAssertTrue([[NSFileManager defaultManager] copyItemAtURL:original toURL:path error:nil]);
+
+    NSData *before = [NSData dataWithContentsOfURL:path];
+    XCTAssertEqualObjects([[[File alloc] initWithData:before fromPath:path] mimeType], @"image/webp");
+
+    Job *job = [[Job alloc] initWithFilePath:path resultsDatabase:nil];
+    JobQueue *queue = [[JobQueue alloc] initWithCPUs:1 dirs:1 files:1 defaults:NSUserDefaults.standardUserDefaults];
+    [queue addJob:job];
+    [queue wait];
+
+    XCTAssertTrue(job.isDone);
+    XCTAssertFalse(job.isFailed);
+    XCTAssertTrue(job.isOptimized);
+    NSData *after = [NSData dataWithContentsOfURL:path];
+    XCTAssertLessThan(after.length, before.length);
+    XCTAssertEqualObjects([[[File alloc] initWithData:after fromPath:path] mimeType], @"image/webp");
 }
 
 @end
