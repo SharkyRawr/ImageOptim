@@ -12,6 +12,7 @@
 #import "JobQueue.h"
 #import "JobProxy.h"
 #import "Backend/Workers/WebpWorker.h"
+#import "Backend/Workers/AvifWorker.h"
 
 @interface FilesController ()
 
@@ -463,6 +464,7 @@ static NSString *kIMDraggedRowIndexesPboardType = @"com.imageoptim.rows";
 #define GIF_ENABLED 4
 #define SVG_ENABLED 8
 #define WEBP_ENABLED 16
+#define AVIF_ENABLED 32
 
 - (int)typesEnabled {
     int types = 0;
@@ -486,6 +488,7 @@ static NSString *kIMDraggedRowIndexesPboardType = @"com.imageoptim.rows";
     }
 
     if ([WebpWorker encoderPath]) types |= WEBP_ENABLED;
+    if ([AvifWorker encoderPath]) types |= AVIF_ENABLED;
 
     if (!types) types = PNG_ENABLED; // will show error in the list
     return types;
@@ -513,6 +516,8 @@ static NSString *kIMDraggedRowIndexesPboardType = @"com.imageoptim.rows";
         [extensions addObjectsFromArray:@[@"webp", @"WEBP"]];
     }
 
+    if (types & AVIF_ENABLED) [extensions addObjectsFromArray:@[@"avif", @"AVIF"]];
+
     return extensions;
 }
 
@@ -536,6 +541,8 @@ static NSString *kIMDraggedRowIndexesPboardType = @"com.imageoptim.rows";
     if (types & WEBP_ENABLED) {
         [fileTypes addObjectsFromArray:@[@"webp", @"WEBP", @"org.webmproject.webp", @"image/webp"]];
     }
+    if (types & AVIF_ENABLED) [fileTypes addObjectsFromArray:@[@"avif", @"AVIF", @"public.avif", @"image/avif"]];
+
     return fileTypes;
 }
 

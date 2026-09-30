@@ -1,0 +1,8 @@
+#!/bin/sh
+# NASM 3 split -hf into format-only help; libaom expects the old full help.
+if [ "$1" = '-hf' ]; then
+    case "$("@IMAGEOPTIM_NASM@" -v)" in
+        'NASM version 3.'*) exec "@IMAGEOPTIM_NASM@" -h all ;;
+    esac
+fi
+exec "@IMAGEOPTIM_NASM@" "$@"

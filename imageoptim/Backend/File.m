@@ -57,6 +57,23 @@
         type = FILETYPE_WEBP;
     }
 
+    if (!type && fileData.length >= 16) {
+        const unsigned char *bytes = fileData.bytes;
+        uint32_t boxSize = ((uint32_t)bytes[0] << 24) | ((uint32_t)bytes[1] << 16) |
+                           ((uint32_t)bytes[2] << 8) | bytes[3];
+        if (!memcmp(bytes + 4, "ftyp", 4) && boxSize >= 16 &&
+            boxSize <= fileData.length && boxSize % 4 == 0) {
+            // Check the major and compatible brands, excluding the minor-version field.
+            for (NSUInteger offset = 8; offset + 4 <= boxSize; offset += 4) {
+                if (offset == 12) continue;
+                if (!memcmp(bytes + offset, "avif", 4) || !memcmp(bytes + offset, "avis", 4)) {
+                    type = FILETYPE_AVIF;
+                    break;
+                }
+            }
+        }
+    }
+
     return [self initWithType:type size:fileData.length fromPath:aPath];
 }
 
@@ -115,6 +132,7 @@
         case FILETYPE_GIF: return @"image/gif";
         case FILETYPE_SVG: return @"image/svg";
         case FILETYPE_WEBP: return @"image/webp";
+        case FILETYPE_AVIF: return @"image/avif";
         default:
             return nil;
     }

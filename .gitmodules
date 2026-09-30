@@ -1,12 +1,12 @@
 [submodule "Sparkle"]
 	path = Sparkle
-	url = https://github.com/sparkle-project/Sparkle.git
+	url = https://github.com/SharkyRawr/Sparkle.git
 [submodule "gifsicle/gifsicle"]
 	path = gifsicle/src
 	url = https://github.com/kohler/gifsicle.git
 [submodule "pngquant/src"]
 	path = pngquant/src
-	url = https://github.com/pornel/pngquant.git
+	url = https://github.com/SharkyRawr/pngquant.git
 [submodule "mozjpeg/src"]
 	path = mozjpeg/src
 	url = https://github.com/mozilla/mozjpeg.git
@@ -22,3 +22,9 @@
 [submodule "webp/src"]
 	path = webp/src
 	url = https://github.com/webmproject/libwebp.git
+[submodule "avif/src"]
+	path = avif/src
+	url = https://github.com/AOMediaCodec/libavif.git
+[submodule "avif/aom"]
+	path = avif/aom
+	url = https://aomedia.googlesource.com/aom

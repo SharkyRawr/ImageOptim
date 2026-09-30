@@ -91,4 +91,49 @@
     XCTAssertEqualObjects([[[File alloc] initWithData:after fromPath:path] mimeType], @"image/webp");
 }
 
+
+- (void)testAVIFBrands {
+    NSURL *path = [NSURL fileURLWithPath:@"/tmp/image-without-extension"];
+    unsigned char header[] = {0, 0, 0, 24, 'f', 't', 'y', 'p', 'm', 'i', 'f', '1',
+                              0, 0, 0, 0, 'm', 'i', 'f', '1', 'a', 'v', 'i', 'f'};
+    NSData *data = [NSData dataWithBytes:header length:sizeof(header)];
+    XCTAssertEqualObjects([[[File alloc] initWithData:data fromPath:path] mimeType], @"image/avif");
+    header[23] = 's';
+    data = [NSData dataWithBytes:header length:sizeof(header)];
+    XCTAssertEqualObjects([[[File alloc] initWithData:data fromPath:path] mimeType], @"image/avif");
+    for (NSUInteger length = 0; length < sizeof(header); length++) {
+        data = [NSData dataWithBytes:header length:length];
+        XCTAssertNil([[[File alloc] initWithData:data fromPath:path] mimeType]);
+    }
+    header[23] = 'c'; // An unrelated HEIF brand is not AVIF.
+    data = [NSData dataWithBytes:header length:sizeof(header)];
+    XCTAssertNil([[[File alloc] initWithData:data fromPath:path] mimeType]);
+}
+
+- (void)testCompressAVIF {
+    NSURL *original = [[NSBundle bundleForClass:self.class] URLForResource:@"unoptimized" withExtension:@"avif"];
+    // No extension, matching the Finder extension's temporary input paths.
+    NSURL *path = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:NSUUID.UUID.UUIDString]];
+    XCTAssertTrue([[NSFileManager defaultManager] copyItemAtURL:original toURL:path error:nil]);
+    NSData *before = [NSData dataWithContentsOfURL:path];
+    XCTAssertEqualObjects([[[File alloc] initWithData:before fromPath:path] mimeType], @"image/avif");
+    Job *job = [[Job alloc] initWithFilePath:path resultsDatabase:nil];
+    JobQueue *queue = [[JobQueue alloc] initWithCPUs:1 dirs:1 files:1 defaults:NSUserDefaults.standardUserDefaults];
+    [queue addJob:job];
+    [queue wait];
+    XCTAssertTrue(job.isDone);
+    XCTAssertFalse(job.isFailed);
+    XCTAssertTrue(job.isOptimized);
+    NSData *after = [NSData dataWithContentsOfURL:path];
+    XCTAssertLessThan(after.length, before.length);
+    XCTAssertEqualObjects([[[File alloc] initWithData:after fromPath:path] mimeType], @"image/avif");
+    Job *second = [[Job alloc] initWithFilePath:path resultsDatabase:nil];
+    [queue addJob:second];
+    [queue wait];
+    XCTAssertTrue(second.isDone);
+    XCTAssertFalse(second.isFailed);
+    XCTAssertEqualObjects(after, [NSData dataWithContentsOfURL:path]);
+    XCTAssertTrue([[NSFileManager defaultManager] removeItemAtURL:path error:nil]);
+}
+
 @end

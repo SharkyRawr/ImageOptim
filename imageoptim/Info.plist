@@ -11,6 +11,25 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
+				<string>avif</string>
+				<string>AVIF</string>
+			</array>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>image/avif</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>AVIF</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.avif</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
 				<string>gif</string>
 				<string>GIF</string>
 			</array>
@@ -169,6 +188,7 @@
 			</dict>
 			<key>NSSendFileTypes</key>
 			<array>
+				<string>public.avif</string>
 				<string>public.png</string>
 				<string>public.jpeg</string>
 				<string>com.compuserve.gif</string>
