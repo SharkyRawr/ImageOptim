@@ -18,6 +18,7 @@
 #import "Workers/SvgcleanerWorker.h"
 #import "Workers/WebpWorker.h"
 #import "Workers/AvifWorker.h"
+#import "Workers/JxlWorker.h"
 #import <sys/xattr.h>
 #import "log.h"
 #include "ResultsDb.h"
@@ -629,6 +630,9 @@
             if ([defs boolForKey:@"SvgcleanerEnabled"]) {
                 [worker_list addObject:[[SvgcleanerWorker alloc] initWithLossy:lossyEnabled job:self]];
             }
+            break;
+        case FILETYPE_JXL:
+            [worker_list addObject:[[JxlWorker alloc] initWithFile:self]];
             break;
         case FILETYPE_AVIF:
             [worker_list addObject:[[AvifWorker alloc] initWithFile:self]];

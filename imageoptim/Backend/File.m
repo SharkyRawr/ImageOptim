@@ -33,6 +33,7 @@
     const unsigned char svgheader[] = {'<','s','v','g'};
     const unsigned char riffheader[] = {'R','I','F','F'};
     const unsigned char webpheader[] = {'W','E','B','P'};
+    const unsigned char jxlheader[] = {0, 0, 0, 12, 0x4a, 0x58, 0x4c, 0x20, 0x0d, 0x0a, 0x87, 0x0a};
     char fileHeaderBytes[12];
 
     if (!fileData || fileData.length < 6) {
@@ -55,6 +56,11 @@
                0 == memcmp(fileHeaderBytes, riffheader, sizeof(riffheader)) &&
                0 == memcmp(fileHeaderBytes + 8, webpheader, sizeof(webpheader))) {
         type = FILETYPE_WEBP;
+    }
+
+    if (!type && (((unsigned char)fileHeaderBytes[0] == 0xff && fileHeaderBytes[1] == 0x0a) ||
+                  (fileData.length >= sizeof(jxlheader) && !memcmp(fileHeaderBytes, jxlheader, sizeof(jxlheader))))) {
+        type = FILETYPE_JXL;
     }
 
     if (!type && fileData.length >= 16) {
@@ -132,6 +138,7 @@
         case FILETYPE_GIF: return @"image/gif";
         case FILETYPE_SVG: return @"image/svg";
         case FILETYPE_WEBP: return @"image/webp";
+        case FILETYPE_JXL: return @"image/jxl";
         case FILETYPE_AVIF: return @"image/avif";
         default:
             return nil;

@@ -11,6 +11,25 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
+				<string>jxl</string>
+				<string>JXL</string>
+			</array>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>image/jxl</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>JXL</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.jpeg-xl</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
 				<string>avif</string>
 				<string>AVIF</string>
 			</array>
@@ -189,6 +208,7 @@
 			<key>NSSendFileTypes</key>
 			<array>
 				<string>public.avif</string>
+				<string>public.jpeg-xl</string>
 				<string>public.png</string>
 				<string>public.jpeg</string>
 				<string>com.compuserve.gif</string>

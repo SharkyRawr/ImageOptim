@@ -136,4 +136,41 @@
     XCTAssertTrue([[NSFileManager defaultManager] removeItemAtURL:path error:nil]);
 }
 
+- (void)testJXLSignatures {
+    NSURL *path = [NSURL fileURLWithPath:@"/tmp/image-without-extension"];
+    const unsigned char container[] = {0,0,0,12,'J','X','L',' ',13,10,135,10};
+    const unsigned char codestream[] = {255,10,0,0,0,0};
+    XCTAssertEqualObjects([[[File alloc] initWithData:[NSData dataWithBytes:container length:sizeof(container)] fromPath:path] mimeType], @"image/jxl");
+    XCTAssertEqualObjects([[[File alloc] initWithData:[NSData dataWithBytes:codestream length:sizeof(codestream)] fromPath:path] mimeType], @"image/jxl");
+    for (NSUInteger length = 0; length < sizeof(container); length++) {
+        XCTAssertNil([[[File alloc] initWithData:[NSData dataWithBytes:container length:length] fromPath:path] mimeType]);
+    }
+}
+
+- (void)testCompressJXL {
+    NSURL *original = [[NSBundle bundleForClass:self.class] URLForResource:@"unoptimized" withExtension:@"jxl"];
+    // No extension, matching the Finder extension's temporary input paths.
+    NSURL *path = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:NSUUID.UUID.UUIDString]];
+    XCTAssertTrue([[NSFileManager defaultManager] copyItemAtURL:original toURL:path error:nil]);
+    NSData *before = [NSData dataWithContentsOfURL:path];
+    XCTAssertEqualObjects([[[File alloc] initWithData:before fromPath:path] mimeType], @"image/jxl");
+    Job *job = [[Job alloc] initWithFilePath:path resultsDatabase:nil];
+    JobQueue *queue = [[JobQueue alloc] initWithCPUs:1 dirs:1 files:1 defaults:NSUserDefaults.standardUserDefaults];
+    [queue addJob:job];
+    [queue wait];
+    XCTAssertTrue(job.isDone);
+    XCTAssertFalse(job.isFailed);
+    XCTAssertTrue(job.isOptimized);
+    NSData *after = [NSData dataWithContentsOfURL:path];
+    XCTAssertLessThan(after.length, before.length);
+    XCTAssertEqualObjects([[[File alloc] initWithData:after fromPath:path] mimeType], @"image/jxl");
+    Job *second = [[Job alloc] initWithFilePath:path resultsDatabase:nil];
+    [queue addJob:second];
+    [queue wait];
+    XCTAssertTrue(second.isDone);
+    XCTAssertFalse(second.isFailed);
+    XCTAssertEqualObjects(after, [NSData dataWithContentsOfURL:path]);
+    XCTAssertTrue([[NSFileManager defaultManager] removeItemAtURL:path error:nil]);
+}
+
 @end

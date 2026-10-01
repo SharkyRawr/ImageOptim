@@ -28,3 +28,6 @@
 [submodule "avif/aom"]
 	path = avif/aom
 	url = https://aomedia.googlesource.com/aom
+[submodule "jxl/src"]
+	path = jxl/src
+	url = https://github.com/libjxl/libjxl.git
