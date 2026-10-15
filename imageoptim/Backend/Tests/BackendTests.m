@@ -173,4 +173,75 @@
     XCTAssertTrue([[NSFileManager defaultManager] removeItemAtURL:path error:nil]);
 }
 
+- (void)testQOIHeader {
+    NSURL *path = [NSURL fileURLWithPath:@"/tmp/image-without-extension"];
+    unsigned char header[] = {'q', 'o', 'i', 'f', 0, 0, 0, 8, 0, 0, 0, 8, 4, 0,
+                              0, 0, 0, 0, 0, 0, 0, 1};
+    XCTAssertEqualObjects([[[File alloc] initWithData:[NSData dataWithBytes:header length:sizeof(header)] fromPath:path] mimeType], @"image/qoi");
+    for (NSUInteger length = 0; length < sizeof(header); length++) {
+        XCTAssertNil([[[File alloc] initWithData:[NSData dataWithBytes:header length:length] fromPath:path] mimeType]);
+    }
+    header[7] = 0;
+    XCTAssertNil([[[File alloc] initWithData:[NSData dataWithBytes:header length:sizeof(header)] fromPath:path] mimeType]);
+    header[7] = 8;
+    header[11] = 0;
+    XCTAssertNil([[[File alloc] initWithData:[NSData dataWithBytes:header length:sizeof(header)] fromPath:path] mimeType]);
+    header[11] = 8;
+    header[12] = 2;
+    XCTAssertNil([[[File alloc] initWithData:[NSData dataWithBytes:header length:sizeof(header)] fromPath:path] mimeType]);
+    header[12] = 3;
+    header[13] = 1;
+    XCTAssertEqualObjects([[[File alloc] initWithData:[NSData dataWithBytes:header length:sizeof(header)] fromPath:path] mimeType], @"image/qoi");
+    header[13] = 2;
+    XCTAssertNil([[[File alloc] initWithData:[NSData dataWithBytes:header length:sizeof(header)] fromPath:path] mimeType]);
+}
+
+- (void)testCompressQOI {
+    NSURL *original = [[NSBundle bundleForClass:self.class] URLForResource:@"unoptimized" withExtension:@"qoi"];
+    // No extension, matching the Finder extension's temporary input paths.
+    NSURL *path = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:NSUUID.UUID.UUIDString]];
+    XCTAssertTrue([[NSFileManager defaultManager] copyItemAtURL:original toURL:path error:nil]);
+    NSData *before = [NSData dataWithContentsOfURL:path];
+    XCTAssertEqualObjects([[[File alloc] initWithData:before fromPath:path] mimeType], @"image/qoi");
+    Job *job = [[Job alloc] initWithFilePath:path resultsDatabase:nil];
+    JobQueue *queue = [[JobQueue alloc] initWithCPUs:1 dirs:1 files:1 defaults:NSUserDefaults.standardUserDefaults];
+    [queue addJob:job];
+    [queue wait];
+    XCTAssertTrue(job.isDone);
+    XCTAssertFalse(job.isFailed);
+    XCTAssertTrue(job.isOptimized);
+    NSData *after = [NSData dataWithContentsOfURL:path];
+    XCTAssertLessThan(after.length, before.length);
+    XCTAssertEqualObjects([[[File alloc] initWithData:after fromPath:path] mimeType], @"image/qoi");
+    XCTAssertTrue(job.canRevert);
+    XCTAssertEqual(job.byteSizeOriginal.unsignedIntegerValue, before.length);
+    XCTAssertEqual(job.byteSizeOptimized.unsignedIntegerValue, after.length);
+    Job *second = [[Job alloc] initWithFilePath:path resultsDatabase:nil];
+    [queue addJob:second];
+    [queue wait];
+    XCTAssertTrue(second.isDone);
+    XCTAssertFalse(second.isFailed);
+    XCTAssertEqualObjects(after, [NSData dataWithContentsOfURL:path]);
+    XCTAssertTrue([[NSFileManager defaultManager] removeItemAtURL:path error:nil]);
+}
+
+- (void)testMalformedQOILeavesOriginalUntouched {
+    // Valid header and end marker, but no chunks for the declared 8x8 image.
+    const unsigned char bytes[] = {'q', 'o', 'i', 'f', 0, 0, 0, 8, 0, 0, 0, 8, 4, 0,
+                                 0, 0, 0, 0, 0, 0, 0, 1};
+    NSData *before = [NSData dataWithBytes:bytes length:sizeof(bytes)];
+    NSURL *path = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:NSUUID.UUID.UUIDString]];
+    XCTAssertTrue([before writeToURL:path atomically:YES]);
+    XCTAssertEqualObjects([[[File alloc] initWithData:before fromPath:path] mimeType], @"image/qoi");
+    Job *job = [[Job alloc] initWithFilePath:path resultsDatabase:nil];
+    JobQueue *queue = [[JobQueue alloc] initWithCPUs:1 dirs:1 files:1 defaults:NSUserDefaults.standardUserDefaults];
+    [queue addJob:job];
+    [queue wait];
+    XCTAssertTrue(job.isDone);
+    XCTAssertTrue(job.isFailed);
+    XCTAssertFalse(job.isOptimized);
+    XCTAssertEqualObjects(before, [NSData dataWithContentsOfURL:path]);
+    XCTAssertTrue([[NSFileManager defaultManager] removeItemAtURL:path error:nil]);
+}
+
 @end

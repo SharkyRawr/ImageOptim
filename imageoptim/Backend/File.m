@@ -80,6 +80,16 @@
         }
     }
 
+    if (!type && fileData.length >= 22) {
+        const unsigned char *bytes = fileData.bytes;
+        if (!memcmp(bytes, "qoif", 4) &&
+            (bytes[4] || bytes[5] || bytes[6] || bytes[7]) &&
+            (bytes[8] || bytes[9] || bytes[10] || bytes[11]) &&
+            (bytes[12] == 3 || bytes[12] == 4) && bytes[13] <= 1) {
+            type = FILETYPE_QOI;
+        }
+    }
+
     return [self initWithType:type size:fileData.length fromPath:aPath];
 }
 
@@ -140,6 +150,7 @@
         case FILETYPE_WEBP: return @"image/webp";
         case FILETYPE_JXL: return @"image/jxl";
         case FILETYPE_AVIF: return @"image/avif";
+        case FILETYPE_QOI: return @"image/qoi";
         default:
             return nil;
     }

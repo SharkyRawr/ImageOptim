@@ -19,6 +19,7 @@
 #import "Workers/WebpWorker.h"
 #import "Workers/AvifWorker.h"
 #import "Workers/JxlWorker.h"
+#import "Workers/QoiWorker.h"
 #import <sys/xattr.h>
 #import "log.h"
 #include "ResultsDb.h"
@@ -633,6 +634,9 @@
             break;
         case FILETYPE_JXL:
             [worker_list addObject:[[JxlWorker alloc] initWithFile:self]];
+            break;
+        case FILETYPE_QOI:
+            [worker_list addObject:[[QoiWorker alloc] initWithFile:self]];
             break;
         case FILETYPE_AVIF:
             [worker_list addObject:[[AvifWorker alloc] initWithFile:self]];

@@ -63,12 +63,15 @@
 		6D0000012A00000100000003 /* WebpWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0000012A00000100000002 /* WebpWorker.m */; };
 		6D0000022A00000100000003 /* AvifWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0000022A00000100000002 /* AvifWorker.m */; };
 		6D0000032A00000100000003 /* JxlWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0000032A00000100000002 /* JxlWorker.m */; };
+		6D0000042A00000100000003 /* QoiWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0000042A00000100000002 /* QoiWorker.m */; };
 		6D0000012A00000200000003 /* cwebp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D0000012A00000200000002 /* cwebp */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6D0000022A00000200000003 /* avifoptim in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D0000022A00000200000002 /* avifoptim */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6D0000032A00000200000003 /* jxloptim in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D0000032A00000200000002 /* jxloptim */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6D0000042A00000200000003 /* qoioptim in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D0000042A00000200000002 /* qoioptim */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6D0000012A00000200000005 /* libwebp-COPYING in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D0000012A00000200000004 /* libwebp-COPYING */; };
 		6D0000022A00000200000005 /* avif-LICENSE in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D0000022A00000200000004 /* avif-LICENSE */; };
 		6D0000032A00000200000005 /* jxl-LICENSE in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D0000032A00000200000004 /* jxl-LICENSE */; };
+		6D0000042A00000200000005 /* qoi-LICENSE in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D0000042A00000200000004 /* qoi-LICENSE */; };
 		5ABE157F1AE5073E00861C6B /* PngCrushWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A44F4B30CB1868100BD2884 /* PngCrushWorker.m */; };
 		5ABE15801AE5073E00861C6B /* PngoutWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE54DEE0CAEF56100903DF4 /* PngoutWorker.m */; };
 		5ABE15811AE5073E00861C6B /* Save.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB81F941AE1BE1300719AB7 /* Save.m */; };
@@ -93,6 +96,7 @@
 		6D0000012A00000100000006 /* unoptimized.webp in Resources */ = {isa = PBXBuildFile; fileRef = 6D0000012A00000100000005 /* unoptimized.webp */; };
 		6D0000022A00000100000006 /* unoptimized.avif in Resources */ = {isa = PBXBuildFile; fileRef = 6D0000022A00000100000005 /* unoptimized.avif */; };
 		6D0000032A00000100000006 /* unoptimized.jxl in Resources */ = {isa = PBXBuildFile; fileRef = 6D0000032A00000100000005 /* unoptimized.jxl */; };
+		6D0000042A00000100000006 /* unoptimized.qoi in Resources */ = {isa = PBXBuildFile; fileRef = 6D0000042A00000100000005 /* unoptimized.qoi */; };
 		5AC64F071AF3FDEE0032AA7F /* ExtensionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC64F061AF3FDEE0032AA7F /* ExtensionController.m */; };
 		5AC64F091AF3FDEE0032AA7F /* ExtensionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC64F081AF3FDEE0032AA7F /* ExtensionController.xib */; };
 		5AC64F0C1AF3FDEE0032AA7F /* ImageOptimize.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5AC64EFE1AF3FDEE0032AA7F /* ImageOptimize.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -459,6 +463,7 @@
 				6D0000012A00000200000003 /* cwebp in CopyFiles */,
 				6D0000022A00000200000003 /* avifoptim in CopyFiles */,
 				6D0000032A00000200000003 /* jxloptim in CopyFiles */,
+				6D0000042A00000200000003 /* qoioptim in CopyFiles */,
 				5ABE16261AE5096D00861C6B /* gifsicle in CopyFiles */,
 				5ABE16241AE5096300861C6B /* jpegoptim in CopyFiles */,
 				5ABE16231AE5095B00861C6B /* jpegtran in CopyFiles */,
@@ -467,6 +472,7 @@
 				6D0000012A00000200000005 /* libwebp-COPYING in CopyFiles */,
 				6D0000022A00000200000005 /* avif-LICENSE in CopyFiles */,
 				6D0000032A00000200000005 /* jxl-LICENSE in CopyFiles */,
+				6D0000042A00000200000005 /* qoi-LICENSE in CopyFiles */,
 				5FFC96C1275842310035D0A2 /* oxipng in CopyFiles */,
 				5ABE161F1AE5094600861C6B /* pngcrush in CopyFiles */,
 				5ABE15841AE5074900861C6B /* pngout in CopyFiles */,
@@ -586,15 +592,19 @@
 		6D0000012A00000100000001 /* WebpWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebpWorker.h; sourceTree = "<group>"; };
 		6D0000022A00000100000001 /* AvifWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvifWorker.h; sourceTree = "<group>"; };
 		6D0000032A00000100000001 /* JxlWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JxlWorker.h; sourceTree = "<group>"; };
+		6D0000042A00000100000001 /* QoiWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QoiWorker.h; sourceTree = "<group>"; };
 		6D0000012A00000100000002 /* WebpWorker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebpWorker.m; sourceTree = "<group>"; };
 		6D0000022A00000100000002 /* AvifWorker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvifWorker.m; sourceTree = "<group>"; };
 		6D0000032A00000100000002 /* JxlWorker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JxlWorker.m; sourceTree = "<group>"; };
+		6D0000042A00000100000002 /* QoiWorker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QoiWorker.m; sourceTree = "<group>"; };
 		6D0000012A00000200000002 /* cwebp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = cwebp; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0000022A00000200000002 /* avifoptim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = avifoptim; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0000032A00000200000002 /* jxloptim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = jxloptim; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D0000042A00000200000002 /* qoioptim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = qoioptim; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0000012A00000200000004 /* libwebp-COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = "libwebp-COPYING"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0000022A00000200000004 /* avif-LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = "avif-LICENSE"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0000032A00000200000004 /* jxl-LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = "jxl-LICENSE"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D0000042A00000200000004 /* qoi-LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = "qoi-LICENSE"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5CD39319662E940096D77F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
 		5A5CD39519662E9A0096D77F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5A5E8ABF1B6508D9003012E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "zh-Hans"; path = "zh-Hans.lproj/Help"; sourceTree = "<group>"; };
@@ -716,6 +726,7 @@
 		6D0000012A00000100000005 /* unoptimized.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = unoptimized.webp; sourceTree = "<group>"; };
 		6D0000022A00000100000005 /* unoptimized.avif */ = {isa = PBXFileReference; lastKnownFileType = file; path = unoptimized.avif; sourceTree = "<group>"; };
 		6D0000032A00000100000005 /* unoptimized.jxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = unoptimized.jxl; sourceTree = "<group>"; };
+		6D0000042A00000100000005 /* unoptimized.qoi */ = {isa = PBXFileReference; lastKnownFileType = file; path = unoptimized.qoi; sourceTree = "<group>"; };
 		5AC64EFE1AF3FDEE0032AA7F /* ImageOptimize.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ImageOptimize.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC64F011AF3FDEE0032AA7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AC64F041AF3FDEE0032AA7F /* ImageOptimize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ImageOptimize.entitlements; sourceTree = "<group>"; };
@@ -851,9 +862,11 @@
 				6D0000012A00000200000002 /* cwebp */,
 				6D0000022A00000200000002 /* avifoptim */,
 				6D0000032A00000200000002 /* jxloptim */,
+				6D0000042A00000200000002 /* qoioptim */,
 				6D0000012A00000200000004 /* libwebp-COPYING */,
 				6D0000022A00000200000004 /* avif-LICENSE */,
 				6D0000032A00000200000004 /* jxl-LICENSE */,
+				6D0000042A00000200000004 /* qoi-LICENSE */,
 				5AC64EFE1AF3FDEE0032AA7F /* ImageOptimize.appex */,
 			);
 			name = Products;
@@ -1100,6 +1113,7 @@
 				6D0000012A00000100000005 /* unoptimized.webp */,
 				6D0000022A00000100000005 /* unoptimized.avif */,
 				6D0000032A00000100000005 /* unoptimized.jxl */,
+				6D0000042A00000100000005 /* unoptimized.qoi */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1143,9 +1157,11 @@
 				6D0000012A00000100000001 /* WebpWorker.h */,
 				6D0000022A00000100000001 /* AvifWorker.h */,
 				6D0000032A00000100000001 /* JxlWorker.h */,
+				6D0000042A00000100000001 /* QoiWorker.h */,
 				6D0000012A00000100000002 /* WebpWorker.m */,
 				6D0000022A00000100000002 /* AvifWorker.m */,
 				6D0000032A00000100000002 /* JxlWorker.m */,
+				6D0000042A00000100000002 /* QoiWorker.m */,
 				5A44F4B20CB1868100BD2884 /* PngCrushWorker.h */,
 				5A44F4B30CB1868100BD2884 /* PngCrushWorker.m */,
 				5AE54DED0CAEF56100903DF4 /* PngoutWorker.h */,
@@ -1232,6 +1248,7 @@
 				6D0000012A00000200000001 /* Build cwebp */,
 				6D0000022A00000200000001 /* Build avifoptim */,
 				6D0000032A00000200000001 /* Build jxloptim */,
+				6D0000042A00000200000001 /* Build qoioptim */,
 				5A5C88511B4E7DCA00BF10B0 /* CopyFiles */,
 			);
 			buildRules = (
@@ -1685,6 +1702,7 @@
 				6D0000012A00000100000006 /* unoptimized.webp in Resources */,
 				6D0000022A00000100000006 /* unoptimized.avif in Resources */,
 				6D0000032A00000100000006 /* unoptimized.jxl in Resources */,
+				6D0000042A00000100000006 /* unoptimized.qoi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1751,6 +1769,23 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"${SRCROOT}/../jxl/build-jxl.sh\"";
 		};
+		6D0000042A00000200000001 /* Build qoioptim */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build qoioptim";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/qoioptim",
+				"$(BUILT_PRODUCTS_DIR)/qoi-LICENSE",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"${SRCROOT}/../qoi/build-qoi.sh\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1772,6 +1807,7 @@
 				6D0000012A00000100000003 /* WebpWorker.m in Sources */,
 				6D0000022A00000100000003 /* AvifWorker.m in Sources */,
 				6D0000032A00000100000003 /* JxlWorker.m in Sources */,
+				6D0000042A00000100000003 /* QoiWorker.m in Sources */,
 				5ABE157F1AE5073E00861C6B /* PngCrushWorker.m in Sources */,
 				5ABE15801AE5073E00861C6B /* PngoutWorker.m in Sources */,
 				5AE04E2E1B5301E100669E85 /* PngquantWorker.m in Sources */,

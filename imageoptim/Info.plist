@@ -11,6 +11,25 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
+				<string>qoi</string>
+				<string>QOI</string>
+			</array>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>image/qoi</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>QOI</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.qoi.image</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
 				<string>jxl</string>
 				<string>JXL</string>
 			</array>
@@ -207,6 +226,7 @@
 			</dict>
 			<key>NSSendFileTypes</key>
 			<array>
+				<string>org.qoi.image</string>
 				<string>public.avif</string>
 				<string>public.jpeg-xl</string>
 				<string>public.png</string>
@@ -220,6 +240,28 @@
 	</array>
 	<key>OSAScriptingDefinition</key>
 	<string>ImageOptimVerbs.sdef</string>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>org.qoi.image</string>
+			<key>UTTypeDescription</key>
+			<string>Quite OK Image</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.image</string>
+			</array>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>qoi</string>
+				</array>
+				<key>public.mime-type</key>
+				<string>image/qoi</string>
+			</dict>
+		</dict>
+	</array>
 	<key>SUAllowsAutomaticUpdates</key>
 	<false/>
 	<key>SUEnableAutomaticChecks</key>

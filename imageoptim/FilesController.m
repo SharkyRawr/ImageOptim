@@ -14,6 +14,7 @@
 #import "Backend/Workers/WebpWorker.h"
 #import "Backend/Workers/AvifWorker.h"
 #import "Backend/Workers/JxlWorker.h"
+#import "Backend/Workers/QoiWorker.h"
 
 @interface FilesController ()
 
@@ -467,6 +468,7 @@ static NSString *kIMDraggedRowIndexesPboardType = @"com.imageoptim.rows";
 #define WEBP_ENABLED 16
 #define AVIF_ENABLED 32
 #define JXL_ENABLED 64
+#define QOI_ENABLED 128
 
 - (int)typesEnabled {
     int types = 0;
@@ -492,6 +494,7 @@ static NSString *kIMDraggedRowIndexesPboardType = @"com.imageoptim.rows";
     if ([WebpWorker encoderPath]) types |= WEBP_ENABLED;
     if ([AvifWorker encoderPath]) types |= AVIF_ENABLED;
     if ([JxlWorker encoderPath]) types |= JXL_ENABLED;
+    if ([QoiWorker encoderPath]) types |= QOI_ENABLED;
 
     if (!types) types = PNG_ENABLED; // will show error in the list
     return types;
@@ -522,6 +525,7 @@ static NSString *kIMDraggedRowIndexesPboardType = @"com.imageoptim.rows";
     if (types & AVIF_ENABLED) [extensions addObjectsFromArray:@[@"avif", @"AVIF"]];
 
     if (types & JXL_ENABLED) [extensions addObjectsFromArray:@[@"jxl", @"JXL"]];
+    if (types & QOI_ENABLED) [extensions addObjectsFromArray:@[@"qoi", @"QOI"]];
     return extensions;
 }
 
@@ -548,6 +552,7 @@ static NSString *kIMDraggedRowIndexesPboardType = @"com.imageoptim.rows";
     if (types & AVIF_ENABLED) [fileTypes addObjectsFromArray:@[@"avif", @"AVIF", @"public.avif", @"image/avif"]];
 
     if (types & JXL_ENABLED) [fileTypes addObjectsFromArray:@[@"jxl", @"JXL", @"public.jpeg-xl", @"image/jxl"]];
+    if (types & QOI_ENABLED) [fileTypes addObjectsFromArray:@[@"qoi", @"QOI", @"org.qoi.image", @"image/qoi"]];
     return fileTypes;
 }
 
