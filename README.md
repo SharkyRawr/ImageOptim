@@ -24,6 +24,8 @@ xcodebuild -project imageoptim/ImageOptim.xcodeproj -scheme ImageOptim -configur
 
 The two `make` commands generate inputs that Xcode needs before it plans the build. Open `imageoptim/ImageOptim.xcodeproj` to build from Xcode after running them.
 
+See [Build architectures](BUILD_ARCHITECTURES.md) for native Release/Archive defaults, Xcode overrides, Rust target mapping, and troubleshooting.
+
 In case of build errors, these sometimes help:
 
 ```sh
