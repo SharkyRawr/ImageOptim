@@ -1,4 +1,5 @@
 #include <cassert>
+#include <brotli/decode.h>
 #define main optimizeMain
 #include "jxloptim.cc"
 #undef main
@@ -14,6 +15,8 @@ static Bytes readFile(const char *path) {
     return Bytes(std::istreambuf_iterator<char>(file), {});
 }
 int main(int argc, char **argv) {
+    // CVE-2026-111497 is fixed in Brotli 1.2.1.
+    assert(BrotliDecoderVersion() >= 0x1002001);
     char input[] = "test-input.jxl", output[] = "test-output.jxl", tool[] = "jxloptim";
     char *args[] = {tool, input, output};
     bool smaller = false;

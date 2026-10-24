@@ -41,7 +41,7 @@ Run the standalone AVIF checks with `cmake -S avif -B /tmp/imageoptim-avif -DIMA
 
 Still JPEG XL images in their original color profile are optimized losslessly with bundled libjxl. The optimizer supports 8- and 16-bit grayscale/RGB with optional alpha, preserves orientation, color information and Exif/XMP boxes, and verifies decoded samples before keeping a smaller JPEG XL output. XYB/lossy-profile images, animation, previews, JPEG reconstruction data, unusual extra channels, and unknown container boxes are left untouched. Inputs are limited to 512 MiB and 64 million pixels.
 
-libjxl v0.12.0 is pinned under `jxl/src`, with its Brotli, Highway, and skcms dependencies pinned as nested submodules. Initialize them with `git submodule update --init --recursive jxl/src`; normal builds use these sources without downloading dependencies or using Homebrew codec libraries.
+libjxl v0.12.0 is pinned under `jxl/src`, with Highway and skcms pinned as nested submodules. Brotli v1.2.1 is pinned separately under `jxl/brotli` to include the fix for [CVE-2026-111497](https://github.com/google/brotli/releases/tag/v1.2.1); the build uses this copy instead of libjxl's older nested dependency. Initialize them with `git submodule update --init --recursive jxl/src jxl/brotli`; normal builds use these sources without downloading dependencies or using Homebrew codec libraries.
 
 Run the standalone JPEG XL checks with `cmake -S jxl -B /tmp/imageoptim-jxl -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DIMAGEOPTIM_JXL_TESTS=ON`, `cmake --build /tmp/imageoptim-jxl --target jxloptim jxloptim-test`, and `ctest --test-dir /tmp/imageoptim-jxl --output-on-failure`.
 

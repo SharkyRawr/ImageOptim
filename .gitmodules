@@ -31,3 +31,6 @@
 [submodule "jxl/src"]
 	path = jxl/src
 	url = https://github.com/libjxl/libjxl.git
+[submodule "jxl/brotli"]
+	path = jxl/brotli
+	url = https://github.com/google/brotli.git
